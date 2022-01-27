@@ -1,4 +1,7 @@
 .sidebar-bg {
   background-color: #10131a;
-  height: 80vh;
+}
+#sideDiv {
+  transition: all 1s ease 0s;
+  visibility: hidden;
 }

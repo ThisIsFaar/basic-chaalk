@@ -3,12 +3,16 @@ import "./App.css";
 import Footer from "./components/footer/footer";
 import Navbar from "./components/navbar/navbar";
 import Sidebar from "./components/sidebar/sidebar";
+import Board from "./components/board/board";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Sidebar />
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <Sidebar />
+        <Board />
+      </div>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
