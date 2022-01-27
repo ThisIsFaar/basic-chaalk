@@ -7,32 +7,32 @@ function Footer() {
         <ul className="navbar-nav d-flex align-items-center">
           <li className="nav-item rounded-circle icons-btm mx-2">
             <a className="nav-link text-white" href="">
-              <i class="fas fa-microphone"></i>
+              <i className="fas fa-microphone"></i>
             </a>
           </li>
           <li className="nav-item rounded-circle icons-btm mx-2 rounded-circle">
             <a className="nav-link text-white" href="">
-              <i class="fas fa-video"></i>
+              <i className="fas fa-video"></i>
             </a>
           </li>
           <li className="nav-item rounded-circle icons-btm mx-2">
             <a className="nav-link text-white" href="">
-              <i class="far fa-closed-captioning"></i>
+              <i className="far fa-closed-captioning"></i>
             </a>
           </li>
           <li className="nav-item rounded-circle icons-btm mx-2">
             <a className="nav-link text-white" href="">
-              <i class="fas fa-external-link-alt"></i>
+              <i className="fas fa-external-link-alt"></i>
             </a>
           </li>
           <li className="nav-item rounded-circle icons-btm mx-2">
             <a className="nav-link text-white" href="">
-              <i class="fas fa-ellipsis-v"></i>
+              <i className="fas fa-ellipsis-v"></i>
             </a>
           </li>
           <li className="nav-item rounded-circle icons-btm bg-danger mx-2">
             <a className="nav-link text-white" href="">
-              <i class="fas fa-phone-slash"></i>
+              <i className="fas fa-phone-slash"></i>
             </a>
           </li>
         </ul>
