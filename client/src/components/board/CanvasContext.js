@@ -1,17 +1,18 @@
-import "./board.css";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 
-function Board() {
+const CanvasContext = React.createContext();
+
+export const CanvasProvider = ({ children }) => {
   const [isDrawing, setIsDrawing] = useState(false);
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
 
   const prepareCanvas = () => {
     const canvas = canvasRef.current;
-    canvas.width = 760 * 2;
-    canvas.height = 482 * 2;
-    canvas.style.width = `760px`;
-    canvas.style.height = `482px`;
+    canvas.width = window.innerWidth * 2;
+    canvas.height = window.innerHeight * 2;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
 
     const context = canvas.getContext("2d");
     context.scale(2, 2);
@@ -49,37 +50,22 @@ function Board() {
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 
-  useEffect(() => {
-    prepareCanvas();
-  }, []);
-
   return (
-    <div>
-      <p style={{ margin: 0 }}>Your Screen</p>
-      <canvas
-        onMouseDown={startDrawing}
-        onMouseUp={finishDrawing}
-        onMouseMove={draw}
-        ref={canvasRef}
-        id="canvas"
-        className="board"
-      />
-      <button
-        style={{
-          borderRadius: "1rem",
-          fontSize: "12px",
-          padding: "0.4rem",
-          top: "10",
-          position: "absolute",
-          top: "80vh",
-          left: "60vw",
-        }}
-        onClick={clearCanvas}
-      >
-        Erase All
-      </button>
-    </div>
+    <CanvasContext.Provider
+      value={{
+        canvasRef,
+        contextRef,
+        prepareCanvas,
+        startDrawing,
+        finishDrawing,
+        clearCanvas,
+        draw,
+      }}
+    >
+      {children}
+    </CanvasContext.Provider>
   );
-}
+};
 
-export default Board;
+export const useCanvas = () => useContext(CanvasContext);
+// export const AuthContext = createContext();

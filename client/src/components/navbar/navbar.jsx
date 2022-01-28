@@ -1,13 +1,11 @@
 import "./navbar.css";
+const logo = require("./logo-2.png");
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-nav-clr">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img
-            src="http://www.thechaalk.com/assets/images/logo-2.png"
-            alt="brand image"
-          ></img>
+          <img src={logo} alt="brand image"></img>
         </a>
         <div
           className="collapse navbar-collapse d-flex justify-content-end"
