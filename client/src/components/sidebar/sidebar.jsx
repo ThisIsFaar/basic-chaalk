@@ -1,5 +1,28 @@
 import "./sidebar.css";
+import React from "react";
+
+import { Stage, Layer, Line, Text, Image } from "react-konva";
+import useImage from "use-image";
+
+const URLImage = ({ image }) => {
+  const [img] = useImage(image.src);
+
+  return (
+    <Image
+      image={img}
+      x={image.x}
+      y={image.y}
+      // I will use offset to set origin to the center of the image
+      offsetX={img ? img.width / 2 : 0}
+      offsetY={img ? img.height / 2 : 0}
+    />
+  );
+};
+
 function Sidebar() {
+  const dragUrl = React.useRef();
+  const [images, setImages] = React.useState([]);
+
   function openSideContent(e) {
     e.preventDefault();
     document.getElementById("sideDiv").style.visibility = "visible";
@@ -102,36 +125,60 @@ function Sidebar() {
           }}
         >
           <img
+            draggable="true"
+            onDragStart={(e) => {
+              dragUrl.current = e.target.src;
+            }}
             className="p-1"
             style={{ borderRadius: "1rem" }}
             src="https://picsum.photos/id/1027/100/100"
             alt="photos"
           ></img>
           <img
+            draggable="true"
+            onDragStart={(e) => {
+              dragUrl.current = e.target.src;
+            }}
             className="p-1"
             style={{ borderRadius: "1rem" }}
             src="https://picsum.photos/id/1029/100/100"
             alt="photos"
           ></img>
           <img
+            draggable="true"
+            onDragStart={(e) => {
+              dragUrl.current = e.target.src;
+            }}
             className="p-1"
             style={{ borderRadius: "1rem" }}
             src="https://picsum.photos/id/1038/100/100"
             alt="photos"
           ></img>
           <img
+            draggable="true"
+            onDragStart={(e) => {
+              dragUrl.current = e.target.src;
+            }}
             className="p-1"
             style={{ borderRadius: "1rem" }}
             src="https://picsum.photos/id/1031/100/100"
             alt="photos"
           ></img>
           <img
+            draggable="true"
+            onDragStart={(e) => {
+              dragUrl.current = e.target.src;
+            }}
             className="p-1"
             style={{ borderRadius: "1rem" }}
             src="https://picsum.photos/id/1032/100/100"
             alt="photos"
           ></img>
           <img
+            draggable="true"
+            onDragStart={(e) => {
+              dragUrl.current = e.target.src;
+            }}
             className="p-1"
             style={{ borderRadius: "1rem" }}
             src="https://picsum.photos/id/1033/100/100"

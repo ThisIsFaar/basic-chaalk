@@ -1,0 +1,29 @@
+.sidebar-bg {
+  background-color: #10131a;
+}
+#sideDiv {
+  transition: all 1s ease 0s;
+  visibility: hidden;
+}
+.board {
+  border-radius: 2rem;
+  display: inline;
+  width: 60vw;
+  height: 65vh;
+  border: honeydew 1px solid;
+  box-shadow: 2px 2px 14px -7px #3a424f;
+  margin-left: 7vw;
+}
+
+.select {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+.pencil {
+  cursor: url("./pencil.ico"), auto;
+}
+.eraser {
+  cursor: url("./eraser.ico"), auto;
+}
